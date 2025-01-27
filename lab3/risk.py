@@ -62,7 +62,8 @@ class Unit:
         """
         # Remove the pass statement and implement the health reduction logic.
         self.health -= damage
-        if hea;
+        if self.health < 0:
+            self.health = 0
 
 
     def isalive(self) -> bool:
