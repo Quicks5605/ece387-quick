@@ -61,6 +61,7 @@ class Unit:
         - Ensure the health value never goes below 0. Use `max()` to handle this.
         """
         # Remove the pass statement and implement the health reduction logic.
+        
         self.health -= damage
         if self.health < 0:
             self.health = 0
@@ -78,7 +79,10 @@ class Unit:
         - Return `True` if health is greater than 0, otherwise return `False`.
         """
         # Remove the `return False` statement and implement the logic to check health.
-        return False
+        if self.health >0 :
+            return True
+        else:
+            return False
 
     def __str__(self) -> str:
         """Return a string representation of the unit."""
@@ -122,7 +126,13 @@ class SiegeMachine(Unit):
         - Use `random.randint(1, 6)` to simulate rolling a six-sided die.
         """
         # Remove the `return 0` statement and implement the two-dice attack logic.
-        return 0
+        count = 0
+        for i in range(2):
+            roll = random.randint(1, 6)
+            if roll >= self.hit_threshold:
+                count+=1
+
+        return count
 
 
 class Player:
