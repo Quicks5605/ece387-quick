@@ -61,7 +61,8 @@ class Unit:
         - Ensure the health value never goes below 0. Use `max()` to handle this.
         """
         # Remove the pass statement and implement the health reduction logic.
-        pass
+        self.health -= damage
+        if hea;
 
 
     def isalive(self) -> bool:
