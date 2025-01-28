@@ -17,7 +17,8 @@ Functions: main: Entry point for the game. Initialize and start the Risk game.
 Author: Dr. Stan Baek, United Stated Air Force Academy
 Date: 18 Jan 2025
 
-**IMPORTANT DISCLAIMER** This code is intended solely for use within the ECE387 class at the United States Air Force Academy. Unauthorized sharing, distribution, or reproduction of this code is strictly prohibited.
+**IMPORTANT DISCLAIMER** This code is intended solely for use within the ECE387 class at the United States Air Force Academy.
+Unauthorized sharing, distribution, or reproduction of this code is strictly prohibited.
 """
 
 import random
@@ -175,12 +176,14 @@ class Player:
                 # 1. Logic to skip adding another Siege Machine if `siege_count >= MaxSiegeUnits`.
                 # 2. Add the unit to the player's army.
                 # 3. Deduct the unit's cost from `self.budget`.
-                pass
-
-                self.army.append(unit)
-                self.budget -= unit.cost
                 if isinstance(unit, SiegeMachine):
-                    siege_count += 1
+                    if siege_count >= self.MaxSiegeUnits:
+                        self.army.append(unit)
+                        self.budget -= unit.cost
+                        siege_count += 1
+                else:
+                    self.army.append(unit)
+                    self.budget -= unit.cost
 
         # Display the player's army composition after recruitment
         unit_counts = self.get_army_composition()
@@ -232,7 +235,9 @@ class Player:
                 # 1. Roll attack dice for the unit.
                 # 2. Add the resulting hits to `total_hits`.
                 # 3. Print the result, e.g., "Knight (Health: 2) scores 1 hit(s)"
-                pass  # Students must implement this
+                # Students must implement this
+                roll = random.randint(1,6)
+
 
         print(f"{self.name} dealt {total_hits} total hits!")
         defender.resolve_damage(total_hits)
