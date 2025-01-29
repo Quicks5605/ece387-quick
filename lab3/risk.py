@@ -93,25 +93,25 @@ class Unit:
 # Subclasses for specific unit types
 class Footman(Unit):
     """Represents a Footman unit with specific attributes."""
-    def __init__(self, name: str):
+    def __init__(self, name: str = "Footman"):
         super().__init__(name="Footman", cost=1, health=1, hit_threshold=5)
 
 
 class Archer(Unit):
     """Represents an Archer unit with specific attributes."""
-    def __init__(self, name: str):
+    def __init__(self, name: str = "Archer"):
         super().__init__(name="Archer", cost=2, health=1, hit_threshold=4)
 
 
 class Knight(Unit):
     """Represents a Knight unit with specific attributes."""
-    def __init__(self, name: str):
+    def __init__(self, name: str = "Knight"):
         super().__init__(name="Knight", cost=3, health=2, hit_threshold=3)
 
 
 class SiegeMachine(Unit):
     """Represents a Siege Machine unit with specific attributes."""
-    def __init__(self, name: str):
+    def __init__(self, name: str = "Siege Machine"):
         super().__init__(name="Siege Machine", cost=10, health=3, hit_threshold=3)
 
     def roll_attack(self) -> int:
@@ -236,13 +236,16 @@ class Player:
                 # 2. Add the resulting hits to `total_hits`.
                 # 3. Print the result, e.g., "Knight (Health: 2) scores 1 hit(s)"
                 # Students must implement this
-                roll = random.randint(1,6)
+                numHit = unit.roll_attack
+                total_hits += numHit
+                print(f"{unit.name} (Health: {unit.health}) scores {numHit} hit(s)")
 
 
         print(f"{self.name} dealt {total_hits} total hits!")
         defender.resolve_damage(total_hits)
 
     def resolve_damage(self, total_damage: int) -> None:
+        army_type = next(self.army_type)  # Get the current unit type in the cycle
         """
         Resolve damage by applying it to random units in the army.
         - Units with zero health are removed from the army.
@@ -259,13 +262,22 @@ class Player:
             # TODO: Remove the `pass` statement and implement
             # 1. Pick a random unit to apply damage
             # 2. Apply damage to a randomly chosen unit
-            pass  # Students must implement this
+            # Students must implement this
+            victim = random.choice(self.army)  # Randomly pick a unit type
+            if isinstance(victim, army_type) and victim.isalive():
+                victim.take_damage(1)
+                total_damage -= total_damage
 
         # TODO: Remove dead units from the army and print the dead units
         # If the unit's health drops to 0, remove it from the army.
         # Print the name of the unit eliminated (if any), e.g., "Knight has been eliminated"
         # Update the army with the alive units.        
-        pass  # Students must implement this
+        # Students must implement this
+        # templist;
+        for unit in self.army:
+            if isinstance(unit, army_type) and not unit.isalive():
+                self.army.remove(unit)
+                print(f"{unit.name} has been eliminated")
 
     def __str__(self):
         """
