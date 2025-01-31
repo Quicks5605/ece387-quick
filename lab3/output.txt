@@ -1,0 +1,143 @@
+
+=======================
+     Welcome to Risk!    
+=======================
+
+
+Dr. Baek, the legendary pirate captain's Army Composition:
+Footman: 3
+Archer: 2
+Knight: 1
+Siege Machine: 2
+
+Computer's Army Composition:
+Footman: 2
+Archer: 1
+Knight: 2
+Siege Machine: 2
+
+Initial Armies:
+Dr. Baek, the legendary pirate captain's Army
+Footmen: 3, Archers: 2, Knights: 1, Siege Machines: 2
+Computer's Army
+Footmen: 2, Archers: 1, Knights: 2, Siege Machines: 2
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Siege Machine rolls 6.
+Siege Machine rolls 3.
+Siege Machine (Health: 3) scores 2 hit(s)
+Siege Machine rolls 5.
+Siege Machine rolls 2.
+Siege Machine (Health: 3) scores 1 hit(s)
+Dr. Baek, the legendary pirate captain dealt 3 total hits!
+Computer receives 3 total damage!
+Archer (Health: 0) takes 1 damage
+Knight (Health: 1) takes 1 damage
+Siege Machine (Health: 2) takes 1 damage
+Archer has been eliminated
+
+Computer's turn to attack!
+Computer dealt 0 total hits!
+Dr. Baek, the legendary pirate captain receives 0 total damage!
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Knight rolls 4.
+Knight (Health: 2) scores 1 hit(s)
+Dr. Baek, the legendary pirate captain dealt 1 total hits!
+Computer receives 1 total damage!
+Siege Machine (Health: 2) takes 1 damage
+
+Computer's turn to attack!
+Footman rolls 3.
+Footman (Health: 1) scores 0 hit(s)
+Footman rolls 1.
+Footman (Health: 1) scores 0 hit(s)
+Computer dealt 0 total hits!
+Dr. Baek, the legendary pirate captain receives 0 total damage!
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Siege Machine rolls 2.
+Siege Machine rolls 4.
+Siege Machine (Health: 3) scores 1 hit(s)
+Siege Machine rolls 4.
+Siege Machine rolls 6.
+Siege Machine (Health: 3) scores 2 hit(s)
+Dr. Baek, the legendary pirate captain dealt 3 total hits!
+Computer receives 3 total damage!
+Knight (Health: 0) takes 1 damage
+Knight (Health: 1) takes 1 damage
+Siege Machine (Health: 1) takes 1 damage
+Knight has been eliminated
+
+Computer's turn to attack!
+Computer dealt 0 total hits!
+Dr. Baek, the legendary pirate captain receives 0 total damage!
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Knight rolls 5.
+Knight (Health: 2) scores 1 hit(s)
+Dr. Baek, the legendary pirate captain dealt 1 total hits!
+Computer receives 1 total damage!
+Siege Machine (Health: 1) takes 1 damage
+
+Computer's turn to attack!
+Footman rolls 4.
+Footman (Health: 1) scores 0 hit(s)
+Footman rolls 5.
+Footman (Health: 1) scores 1 hit(s)
+Computer dealt 1 total hits!
+Dr. Baek, the legendary pirate captain receives 1 total damage!
+Archer (Health: 0) takes 1 damage
+Archer has been eliminated
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Siege Machine rolls 6.
+Siege Machine rolls 3.
+Siege Machine (Health: 3) scores 2 hit(s)
+Siege Machine rolls 3.
+Siege Machine rolls 1.
+Siege Machine (Health: 3) scores 1 hit(s)
+Dr. Baek, the legendary pirate captain dealt 3 total hits!
+Computer receives 3 total damage!
+Siege Machine (Health: 0) takes 1 damage
+Footman (Health: 0) takes 1 damage
+Footman (Health: 0) takes 1 damage
+Siege Machine has been eliminated
+Footman has been eliminated
+Footman has been eliminated
+
+Computer's turn to attack!
+Computer dealt 0 total hits!
+Dr. Baek, the legendary pirate captain receives 0 total damage!
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Knight rolls 1.
+Knight (Health: 2) scores 0 hit(s)
+Dr. Baek, the legendary pirate captain dealt 0 total hits!
+Computer receives 0 total damage!
+
+Computer's turn to attack!
+Computer dealt 0 total hits!
+Dr. Baek, the legendary pirate captain receives 0 total damage!
+
+Dr. Baek, the legendary pirate captain's turn to attack!
+Siege Machine rolls 3.
+Siege Machine rolls 1.
+Siege Machine (Health: 3) scores 1 hit(s)
+Siege Machine rolls 4.
+Siege Machine rolls 6.
+Siege Machine (Health: 3) scores 2 hit(s)
+Dr. Baek, the legendary pirate captain dealt 3 total hits!
+Computer receives 3 total damage!
+Knight (Health: 0) takes 1 damage
+Siege Machine (Health: 0) takes 1 damage
+Siege Machine has been eliminated
+Knight has been eliminated
+
+Computer is defeated! You win!
+
+Final Armies:
+Dr. Baek, the legendary pirate captain's Army
+Footmen: 3, Archers: 1, Knights: 1, Siege Machines: 2
+Computer's Army
+Footmen: 0, Archers: 0, Knights: 0, Siege Machines: 0

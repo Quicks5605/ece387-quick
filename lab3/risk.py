@@ -64,6 +64,7 @@ class Unit:
         # Remove the pass statement and implement the health reduction logic.
         
         self.health = max(self.health - damage, 0)
+        print(f"{self.name} (Health: {self.health}) takes {damage} damage")
 
 
     def isalive(self) -> bool:
@@ -85,7 +86,7 @@ class Unit:
 
     def __str__(self) -> str:
         """Return a string representation of the unit."""
-        return f"{self.name} (Health: {self.health})"
+        return f"{self.name} (Health: {self.health})"#added to match example plus debug help on resolve damage
 
 
 # Subclasses for specific unit types
@@ -128,6 +129,7 @@ class SiegeMachine(Unit):
         count = 0
         for i in range(2):
             roll = random.randint(1, 6)
+            print(f"{self.name} rolls {roll}.")# I made it chow roll because the other units do that...
             if roll >= self.hit_threshold:
                 count+=1
 
@@ -254,16 +256,15 @@ class Player:
         """
 
         print(f"{self.name} receives {total_damage} total damage!")
+        
+        if not self.army:
+            return  # Exit early if no units left
 
-        while total_damage > 0 and self.army:
-            # TODO: Remove the `pass` statement and implement
-            # 1. Pick a random unit to apply damage
-            # 2. Apply damage to a randomly chosen unit
-            # Students must implement this
-            victim = random.choice(self.army)  # Randomly pick a unit type
-            if isinstance(victim, army_type) and victim.isalive():
-                victim.take_damage(1)
-                total_damage -= 1
+        while total_damage > 0 and any(unit.isalive() for unit in self.army):
+            victim = random.choice(self.army)  # Pick a random unit
+            if victim.isalive(): #technically redundant check, but it is safer...
+                victim.take_damage(1) #takes the damage
+                total_damage -= 1 #decreases count
 
         # TODO: Remove dead units from the army and print the dead units
         # If the unit's health drops to 0, remove it from the army.
@@ -271,10 +272,14 @@ class Player:
         # Update the army with the alive units.        
         # Students must implement this
         # templist;
+        alive_units = []
         for unit in self.army:
-            if isinstance(unit, army_type) and not unit.isalive():
-                self.army.remove(unit)
+            if unit.isalive():
+                alive_units.append(unit)
+            else:
                 print(f"{unit.name} has been eliminated")
+
+        self.army = alive_units
 
     def __str__(self):
         """
@@ -357,5 +362,5 @@ def main():
 
 # Run the game
 if __name__ == "__main__":
-    #main()
-    test()
+    main()
+    #test()
