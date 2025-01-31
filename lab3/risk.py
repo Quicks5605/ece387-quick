@@ -63,9 +63,7 @@ class Unit:
         """
         # Remove the pass statement and implement the health reduction logic.
         
-        self.health -= damage
-        if self.health < 0:
-            self.health = 0
+        self.health = max(self.health - damage, 0)
 
 
     def isalive(self) -> bool:
@@ -178,12 +176,11 @@ class Player:
                 # 3. Deduct the unit's cost from `self.budget`.
                 if isinstance(unit, SiegeMachine):
                     if siege_count >= self.MaxSiegeUnits:
-                        self.army.append(unit)
-                        self.budget -= unit.cost
-                        siege_count += 1
-                else:
-                    self.army.append(unit)
-                    self.budget -= unit.cost
+                        continue  # Skip adding more Siege Machines if maxed out
+                    siege_count += 1
+
+                self.army.append(unit)
+                self.budget -= unit.cost
 
         # Display the player's army composition after recruitment
         unit_counts = self.get_army_composition()
@@ -236,7 +233,7 @@ class Player:
                 # 2. Add the resulting hits to `total_hits`.
                 # 3. Print the result, e.g., "Knight (Health: 2) scores 1 hit(s)"
                 # Students must implement this
-                numHit = unit.roll_attack
+                numHit = unit.roll_attack()
                 total_hits += numHit
                 print(f"{unit.name} (Health: {unit.health}) scores {numHit} hit(s)")
 
@@ -266,7 +263,7 @@ class Player:
             victim = random.choice(self.army)  # Randomly pick a unit type
             if isinstance(victim, army_type) and victim.isalive():
                 victim.take_damage(1)
-                total_damage -= total_damage
+                total_damage -= 1
 
         # TODO: Remove dead units from the army and print the dead units
         # If the unit's health drops to 0, remove it from the army.
